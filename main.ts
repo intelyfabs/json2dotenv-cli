@@ -1,5 +1,5 @@
-// import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts";
-import { Command } from "cliffy/command";
+import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts";
+// import { Command } from "cliffy/command";
 
 // @ts-ignore Set debug from env var
 globalThis.debug = Deno.env.get("DEBUG") ?? false;
