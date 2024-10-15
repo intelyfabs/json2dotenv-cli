@@ -38,7 +38,7 @@ let stream_in = Deno.stdin.readable, stream_out = Deno.stdout.writable;
 if (Deno.stdin.isTerminal()) {
   const { options, args } = await new Command()
     .name("dotenv")
-    .version("0.1.0")
+    .version("0.1.1")
     .description("Transform a JSON env file into dotenv file")
     .env("DEBUG=<enable:boolean>", "Enable debug output")
     .option("-d, --debug", "Enable debug output")

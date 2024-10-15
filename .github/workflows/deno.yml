@@ -82,6 +82,12 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
+          body: |
+            # Install
+            You can either download the appropriate release binaries, and add it to your path via a folder like `~/.local/bin` or `/usr/bin`, or you can use the following command if you have [Deno 2.0](https://deno.land) installed:
+            ```sh
+            deno install -gf https://raw.githubusercontent.com/intelyfabs/json2dotenv-cli/refs/tags/${{github.ref_name}}/main.ts -n dotenv 
+            ```
           files: |
             dotenv-darwin-aarch64
             dotenv-linux-x86
