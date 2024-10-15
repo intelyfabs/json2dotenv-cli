@@ -53,23 +53,25 @@ jobs:
 
       - name: Build for linux
         run: deno compile main.ts --target x86_64-unknown-linux-gnu --output dotenv-linux-x86 -RWE main.ts 
-      - name: Build for OSX (Intel)
-        run: deno compile main.ts --target x86_64-apple-darwin --output dotenv-darwin-x86 -RWE main.ts 
-      - name: Build for OSX (Apple Silicon)
-        run: deno compile --target aarch64-apple-darwin --output dotenv-darwin-aarch64 -RWE main.ts 
-
       - name: Upload linux artifact
         uses: actions/upload-artifact@v4.4.3
         with:
           name: dotenv-linux-x86
           path: ./dotenv-linux-x86
+
+      - name: Build for OSX (Intel)
+        run: deno compile main.ts --target x86_64-apple-darwin --output dotenv-darwin-x86 -RWE main.ts 
       - name: Upload OSX Intel artifact
         uses: actions/upload-artifact@v4.4.3
         with:
           name: dotenv-darwin-x86
           path: ./dotenv-darwin-x86
+
+      - name: Build for OSX (Apple Silicon)
+        run: deno compile --target aarch64-apple-darwin --output dotenv-darwin-aarch64 -RWE main.ts 
       - name: Upload OSX Apple Silicon artifact
         uses: actions/upload-artifact@v4.4.3
         with:
           name: dotenv-darwin-aarch64
           path: ./dotenv-darwin-aarch64
+
