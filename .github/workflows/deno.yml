@@ -52,11 +52,11 @@ jobs:
           deno-version: v2.x
 
       - name: Build for linux
-        run: deno compile main.ts --target x86_64-unknown-linux-gnu --output dotenv-linux-x86
+        run: deno compile main.ts --target x86_64-unknown-linux-gnu --output dotenv-linux-x86 -RWE main.ts 
       - name: Build for OSX (Intel)
-        run: deno compile main.ts --target x86_64-apple-darwin --output dotenv-darwin-x86
+        run: deno compile main.ts --target x86_64-apple-darwin --output dotenv-darwin-x86 -RWE main.ts 
       - name: Build for OSX (Apple Silicon)
-        run: deno compile main.ts --target aarch64-apple-darwin --output dotenv-darwin-aarch64
+        run: deno compile --target aarch64-apple-darwin --output dotenv-darwin-aarch64 -RWE main.ts 
 
       - name: Upload linux artifact
         uses: actions/upload-artifact@v4.4.3
