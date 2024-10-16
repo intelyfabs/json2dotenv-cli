@@ -1,4 +1,4 @@
-import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts";
+import { Command } from "jsr:@cliffy/command@1.0.0-rc.7";
 // import { Command } from "cliffy/command";
 
 // @ts-ignore Set debug from env var
@@ -38,7 +38,7 @@ let stream_in = Deno.stdin.readable, stream_out = Deno.stdout.writable;
 if (Deno.stdin.isTerminal()) {
   const { options, args } = await new Command()
     .name("dotenv")
-    .version("0.1.1")
+    .version("0.1.2")
     .description("Transform a JSON env file into dotenv file")
     .env("DEBUG=<enable:boolean>", "Enable debug output")
     .option("-d, --debug", "Enable debug output")
